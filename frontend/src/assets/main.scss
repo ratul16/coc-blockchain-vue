@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import "./variable.scss";
+@import "./mixins.scss";
+
+// Global Style
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.01);
+  background: $border-variant-1;
+  border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  color: $text-variant-5;
+  background: $white;
+  line-height: 1.6;
+  font-family: "Lato", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  margin-top: 58px;
+  color: $text-variant-5;
+  margin-bottom: 20px;
+}
+
+.router-link-exact-active {
+  color: $blue;
+}
+
+.action-btn {
+  button {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.bg-warning {
+  background-color: $yellow !important;
+}
+.bg-success {
+  background-color: $green !important;
+}
+.bg-danger {
+  background-color: $red !important;
+}
+
+.bg-hover {
+  background-color: $border-variant-5;
+}

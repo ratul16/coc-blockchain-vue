@@ -1,0 +1,35 @@
+$breakpoints: (
+    "mobile": 576px,
+    "tab-sm": 768px,
+    "tab": 991px,
+    "desktop-sm": 1024px,
+    "desktop": 1200px,
+    "desktop-xl" : 1904px,
+);
+
+@mixin media-queries($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == min {
+        $width: $width + 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+        @content;
+    }
+  }
+}
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

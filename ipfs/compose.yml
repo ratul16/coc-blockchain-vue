@@ -1,0 +1,22 @@
+version: "3"
+services:
+  private_ipfs_host:
+    image: ipfs/kubo:latest
+    container_name: private_ipfs_host
+    volumes:
+      - ipfs-staging:/export
+      - ipfs-data-persist:/data/ipfs
+    ports:
+      - "4001:4001"
+      - "4001:4001/udp"
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:5001:5001"
+    networks:
+      - ipfs_network
+
+networks:
+  ipfs_network:
+    driver: bridge
+volumes:
+  ipfs-staging:
+  ipfs-data-persist:
